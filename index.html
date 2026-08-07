@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maria Sandoval — Especialista en Neuromarketing, Branding y Product Marketing en Freiburg, Alemania.">
+    <title>Maria Sandoval — Neuromarketing & Branding</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #6B46C1;
+            --magenta: #E91E8C;
+            --dark-blue: #1a1a2e;
+            --solar-yellow: #FDD835;
+            --gold: #D4A574;
+            --mint: #A8E6CF;
+            --coral: #FF6B6B;
+            --teal: #00B4D8;
+            --text-dark: #1a1a2e;
+            --text-light: #f8f8f8;
+            --bg-light: #fafaf8;
+            
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            max-width: 65ch;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-purple);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .lang-btn.active {
+            color: var(--primary-purple);
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: calc(var(--spacing-xl) * 2 + 80px);
+            padding-bottom: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hero-content h1 {
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-content h1 strong {
+            color: var(--magenta);
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-text em {
+            color: var(--primary-purple);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .cta.primary {
+            background: var(--primary-purple);
+            color: white;
+        }
+
+        .cta.primary:hover {
+            background: #5a3aa8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(107, 70, 193, 0.3);
+        }
+
+        .cta.secondary {
+            border: 2px solid var(--primary-purple);
+            color: var(--primary-purple);
+            background: transparent;
+        }
+
+        .cta.secondary:hover {
+            background: rgba(107, 70, 193, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Morphing SVG Animation */
+        .morphing-container {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .morphing-shape {
+            width: 300px;
+            height: 300px;
+            filter: drop-shadow(0 10px 30px rgba(107, 70, 193, 0.2));
+        }
+
+        /* Floating Keywords */
+        .keyword {
+            position: absolute;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+            white-space: nowrap;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .keyword:hover {
+            opacity: 1;
+            color: var(--solar-yellow);
+        }
+
+        .keyword-line {
+            position: absolute;
+            stroke: var(--primary-purple);
+            stroke-width: 1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Positioning for keywords (circular around shape) */
+        .keyword.kw-top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .keyword.kw-right {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .keyword.kw-bottom {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .keyword.kw-left {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .morphing-shape svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .morph-path {
+            fill: url(#gradientMorph);
+            filter: blur(0.5px);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--spacing-xl) var(--spacing-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 60ch;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Hero Image Section - Full Screen WOW Effect */
+        .hero-image-section {
+            width: 100vw;
+            margin: var(--spacing-xl) 0;
+            margin-left: calc(-50vw + 50%);
+            padding: 0;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            background: linear-gradient(135deg, #E91E8C 0%, #6B46C1 100%);
+            overflow: hidden;
+        }
+
+        .hero-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(233, 30, 140, 0.15) 0%, rgba(107, 70, 193, 0.1) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-image-container img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            animation: zoomIn 0.8s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            gap: 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-image-placeholder.hidden {
+            display: none;
+        }
+
+        .hero-image-placeholder svg {
+            stroke: white;
+            opacity: 0.6;
+        }
+
+        .hero-image-placeholder p {
+            text-align: center;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .hero-image-placeholder small {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-container {
+                height: 300px;
+            }
+        }
+
+        /* Filosofía Section */
+        .filosofia {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05) 0%, rgba(168, 230, 207, 0.05) 100%);
+            border-radius: 12px;
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .filosofia blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--magenta);
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .filosofia-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: #888;
+            margin-top: var(--spacing-lg);
+        }
+
+        /* Servicios Grid - 2x2 Layout */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-purple);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .service-card:nth-child(1)::before { background: var(--magenta); }
+        .service-card:nth-child(2)::before { background: var(--teal); }
+        .service-card:nth-child(3)::before { background: var(--coral); }
+        .service-card:nth-child(4)::before { background: var(--mint); }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; border-left-color: var(--magenta); }
+        .service-card:nth-child(2) { animation-delay: 0.2s; border-left-color: var(--teal); }
+        .service-card:nth-child(3) { animation-delay: 0.3s; border-left-color: var(--coral); }
+        .service-card:nth-child(4) { animation-delay: 0.4s; border-left-color: var(--mint); }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .service-card:nth-child(1):hover {
+            box-shadow: 0 12px 40px rgba(233, 30, 140, 0.2);
+        }
+
+        .service-card:nth-child(2):hover {
+            box-shadow: 0 12px 40px rgba(0, 180, 216, 0.2);
+        }
+
+        .service-card:nth-child(3):hover {
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.2);
+        }
+
+        .service-card:nth-child(4):hover {
+            box-shadow: 0 12px 40px rgba(168, 230, 207, 0.2);
+        }
+
+        .service-number {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .service-card:nth-child(1) .service-number { color: var(--magenta); }
+        .service-card:nth-child(2) .service-number { color: var(--teal); }
+        .service-card:nth-child(3) .service-number { color: var(--coral); }
+        .service-card:nth-child(4) .service-number { color: var(--mint); }
+
+        .service-card h3 {
+            color: var(--text-dark);
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: rgba(107, 70, 193, 0.1);
+            color: var(--primary-purple);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: var(--spacing-md);
+        }
+
+        /* Proceso Section */
+        .proceso {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .proceso .section-subtitle {
+            color: #ccc;
+        }
+
+        .proceso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .proceso-step {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--spacing-lg);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .proceso-step:nth-child(1) { animation: slideUp 0.6s ease 0.1s forwards; }
+        .proceso-step:nth-child(2) { animation: slideUp 0.6s ease 0.2s forwards; }
+        .proceso-step:nth-child(3) { animation: slideUp 0.6s ease 0.3s forwards; }
+        .proceso-step:nth-child(4) { animation: slideUp 0.6s ease 0.4s forwards; }
+
+        .proceso-step:hover {
+            background: rgba(107, 70, 193, 0.15);
+            border-color: rgba(107, 70, 193, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .proceso-step:nth-child(1) h3 { color: var(--magenta); }
+        .proceso-step:nth-child(2) h3 { color: var(--teal); }
+        .proceso-step:nth-child(3) h3 { color: var(--coral); }
+        .proceso-step:nth-child(4) h3 { color: var(--mint); }
+
+        .proceso-number {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .proceso-step:nth-child(1) .proceso-number { color: var(--magenta); }
+        .proceso-step:nth-child(2) .proceso-number { color: var(--teal); }
+        .proceso-step:nth-child(3) .proceso-number { color: var(--coral); }
+        .proceso-step:nth-child(4) .proceso-number { color: var(--mint); }
+
+        /* Filosofía Quote */
+        .filosofia-quote {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.1) 0%, rgba(168, 230, 207, 0.1) 100%);
+            border-radius: 12px;
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .filosofia-quote blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--magenta);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .quote-author {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        /* Contacto Section */
+        .contacto {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #5a3aa8 100%);
+            color: white;
+        }
+
+        .contacto .section-header h2,
+        .contacto .section-subtitle {
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .contact-value a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--solar-yellow);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .contact-value a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Form */
+        .contact-form {
+            max-width: 600px;
+            margin: var(--spacing-xl) auto;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.875rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(253, 216, 53, 0.2);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.875rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-submit {
+            background: var(--solar-yellow);
+            color: var(--text-dark);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: #fce565;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(253, 216, 53, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-tagline {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--solar-yellow);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                padding: 0 var(--spacing-md);
+            }
+
+            .hero-visual {
+                height: 300px;
+            }
+
+            .morphing-shape {
+                width: 250px;
+                height: 250px;
+            }
+
+            section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proceso-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-container {
+                height: 400px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Dark Mode Support (iPhone 14, etc) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-light: #0f0f0f;
+                --text-dark: #f8f8f8;
+                --text-light: #1a1a2e;
+            }
+
+            body {
+                background: var(--bg-light);
+                color: var(--text-dark);
+            }
+
+            nav {
+                background: rgba(15, 15, 15, 0.95);
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+
+            nav a {
+                color: var(--text-dark);
+            }
+
+            .service-card,
+            .filosofia-quote {
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(107, 70, 193, 0.5);
+            }
+
+            .service-card {
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            .filosofia {
+                background: linear-gradient(135deg, rgba(107, 70, 193, 0.15) 0%, rgba(168, 230, 207, 0.08) 100%);
+            }
+
+            .filosofia blockquote {
+                color: #ff4da6;
+            }
+
+            .filosofia-quote blockquote {
+                color: #ff4da6;
+            }
+
+            p {
+                color: #ddd;
+            }
+
+            .section-subtitle {
+                color: #aaa;
+            }
+
+            .quote-author {
+                color: #999;
+            }
+
+            h1, h2, h3 {
+                color: var(--text-dark);
+            }
+
+            .filosofia-tags {
+                color: #aaa;
+            }
+
+            .keyword {
+                color: #ff4da6;
+            }
+
+            .keyword:hover {
+                color: #fdd835;
+            }
+
+            .keyword-line {
+                stroke: #ff4da6;
+                opacity: 0.4;
+            }
+
+            footer {
+                background: #1a1a2e;
+                border-top-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(253, 216, 53, 0.6);
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">MS</a>
+        <ul>
+            <li><a href="#servicios" data-es="Servicios" data-de="Leistungen">Servicios</a></li>
+            <li><a href="#filosofia" data-es="Filosofía" data-de="Philosophie">Filosofía</a></li>
+            <li><a href="#contacto" data-es="Contacto" data-de="Kontakt">Contacto</a></li>
+            <li class="language-switcher">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Maria<br><strong>Sandoval.</strong></h1>
+                <p class="hero-text" data-es="Construyo marcas con alma y estrategia, combinando psicología del consumidor, creatividad y sensibilidad estética para transformar ideas en identidades digitales memorables." data-de="Ich baue Marken mit Seele und Strategie, durch die Verbindung von Käuferpsychologie, Kreativität und ästhetischem Gespür, um Ideen in unvergessliche digitale Identitäten zu verwandeln.">
+                    Construyo marcas con <em>alma y estrategia</em>, combinando psicología del consumidor, creatividad y sensibilidad estética para transformar ideas en identidades digitales memorables.
+                </p>
+                <div class="cta-group">
+                    <a href="#contacto" class="cta primary" data-es="Hablemos" data-de="Lass uns reden">Hablemos</a>
+                    <a href="#servicios" class="cta secondary" data-es="Ver servicios" data-de="Leistungen ansehen">Ver servicios</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="morphing-container">
+                    <!-- Conectores (líneas) -->
+                    <svg class="keyword-lines" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                        <line class="keyword-line" x1="190" y1="0" x2="190" y2="30" />
+                        <line class="keyword-line" x1="380" y1="190" x2="350" y2="190" />
+                        <line class="keyword-line" x1="190" y1="380" x2="190" y2="350" />
+                        <line class="keyword-line" x1="0" y1="190" x2="30" y2="190" />
+                    </svg>
+
+                    <!-- Palabras clave -->
+                    <span class="keyword kw-top">Estrategia</span>
+                    <span class="keyword kw-right">Posicionamiento</span>
+                    <span class="keyword kw-bottom">Identidad</span>
+                    <span class="keyword kw-left">Propósito</span>
+
+                    <!-- Morphing Shape -->
+                    <div class="morphing-shape">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradientMorph" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6B46C1;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#A8E6CF;stop-opacity:0.6" />
+                                    <stop offset="100%" style="stop-color:#FDD835;stop-opacity:0.7" />
+                                </linearGradient>
+                            </defs>
+                            <path class="morph-path" d="M150,60 C200,60 240,100 240,150 C240,200 200,240 150,240 C100,240 60,200 60,150 C60,100 100,60 150,60 Z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Foto Profesional de María (Placeholder) -->
+                <div style="position: absolute; bottom: 20px; right: 20px; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, rgba(107, 70, 193, 0.2) 0%, rgba(168, 230, 207, 0.2) 100%); border: 2px solid var(--primary-purple); display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.8rem; text-align: center; padding: 10px; overflow: hidden;">
+                    <img id="hero-profile-img" src="maria-profile.jpg" alt="María Sandoval" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+                    <span id="profile-placeholder" style="position: absolute; color: #999;">Foto de María</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image Section (Foto grande de personalidad) -->
+    <section class="hero-image-section">
+        <div class="hero-image-container">
+            <div class="hero-image-placeholder" id="heroImagePlaceholder">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <p>Tu foto grande aquí<br><small>(Freiburg, estudio, o conceptual)</small></p>
+            </div>
+            <img id="heroImage" src="freiburg-hero.jpg" alt="Hero" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block;" />
+        </div>
+    </section>
+
+    <!-- Filosofía -->
+    <section id="filosofia" class="filosofia reveal">
+        <blockquote data-es=""Todo lo que construimos debe tener propósito además de funcionalidad."" data-de=""Alles, was wir bauen, muss neben Funktionalität auch Identität haben."">"Todo lo que construimos debe tener <em>propósito</em> además de funcionalidad."</blockquote>
+        <div class="filosofia-tags">
+            <span>Neuromarketing ◆</span>
+            <span>Branding & Identidad ◆</span>
+            <span>Go-to-Market ◆</span>
+            <span>Product Marketing ◆</span>
+            <span>Corporate Design</span>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <div class="section-header">
+            <h2 data-es="Lo que puedo hacer por ti" data-de="Was ich für dich tun kann">Lo que puedo<br>hacer por <em>ti</em></h2>
+            <p class="section-subtitle" data-es="Cada proyecto lo abordo desde un lugar auténtico. No entrego solo estrategia, entrego claridad, energía y una dirección que se siente verdadera." data-de="Jedes Projekt gehe ich von einem authentischen Ort aus an. Ich liefere nicht nur Strategie, ich liefere Klarheit, Energie und eine Richtung, die sich wahr anfühlt.">
+                Cada proyecto lo abordo desde un lugar auténtico. No entrego solo estrategia, entrego claridad, energía y una dirección que se siente verdadera.
+            </p>
+        </div>
+
+        <div class="servicios-grid">
+            <div class="service-card reveal">
+                <div class="service-number">01</div>
+                <h3 data-es="Neuromarketing" data-de="Neuromarketing">Neuromarketing</h3>
+                <p data-es="Aplico ciencia del comportamiento y psicología del consumidor para crear mensajes que activan decisiones de compra de forma auténtica y ética." data-de="Ich wende Verhaltenswissenschaft und Käuferpsychologie an, um Botschaften zu entwickeln, die Kaufentscheidungen authentisch und ethisch aktivieren.">
+                    Aplico ciencia del comportamiento y psicología del consumidor para crear mensajes que activan decisiones de compra de forma auténtica y ética.
+                </p>
+                <span class="service-tag">Consumer Psychology</span>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-number">02</div>
+                <h3 data-es="Branding & Identidad" data-de="Branding & Identität">Branding & Identidad</h3>
+                <p data-es="Nombre, identidad visual, tono de voz y posicionamiento. Construyo tu marca para que sea clara, reconocible y consistente en cada punto de contacto." data-de="Name, visuelle Identität, Tonalität und Positionierung. Ich baue deine Marke so auf, dass sie an jedem Touchpoint klar, erkennbar und konsistent ist.">
+                    Nombre, identidad visual, tono de voz y posicionamiento. Construyo tu marca para que sea clara, reconocible y consistente en cada punto de contacto.
+                </p>
+                <span class="service-tag">Brand Identity</span>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-number">03</div>
+                <h3 data-es="Product Marketing" data-de="Product Marketing">Product Marketing</h3>
+                <p data-es="Estrategia de posicionamiento y mensajes clave para que tu producto resuene con el mercado correcto desde el primer momento." data-de="Positionierungsstrategie und Kernbotschaften, damit dein Produkt vom ersten Moment an beim richtigen Markt ankommt.">
+                    Estrategia de posicionamiento y mensajes clave para que tu producto resuene con el mercado correcto desde el primer momento.
+                </p>
+                <span class="service-tag">Positioning</span>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-number">04</div>
+                <h3 data-es="Go-to-Market" data-de="Go-to-Market">Go-to-Market</h3>
+                <p data-es="Planifico tu lanzamiento con precisión estratégica: segmentación, canales, timing y narrativa para captar la atención que mereces." data-de="Ich plane deinen Launch mit strategischer Präzision: Segmentierung, Kanäle, Timing und Narrative, um die Aufmerksamkeit zu gewinnen, die du verdienst.">
+                    Planifico tu lanzamiento con precisión estratégica: segmentación, canales, timing y narrativa para captar la atención que mereces.
+                </p>
+                <span class="service-tag">Launch Strategy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="proceso">
+        <div class="section-header">
+            <h2 data-es="Cómo trabajamos juntos" data-de="Wie wir zusammenarbeiten">Cómo trabajamos<br><em>juntos</em></h2>
+            <p class="section-subtitle" data-es="Un proceso pensado para que te sientas acompañado/a, seguro/a y emocionado/a en cada etapa." data-de="Ein Prozess, der darauf ausgelegt ist, dass du dich in jeder Phase gut begleitet, sicher und begeistert fühlst.">
+                Un proceso pensado para que te sientas acompañado/a, seguro/a y emocionado/a en cada etapa.
+            </p>
+        </div>
+
+        <div class="proceso-grid">
+            <div class="proceso-step reveal">
+                <div class="proceso-number">01</div>
+                <h3 data-es="Escucha" data-de="Zuhören">Escucha</h3>
+                <p data-es="Entiendo tu historia, visión y el alma de tu proyecto antes de cualquier estrategia." data-de="Ich verstehe deine Geschichte, Vision und die Seele deines Projekts, bevor ich irgendetwas strategisch angehe.">
+                    Entiendo tu historia, visión y el alma de tu proyecto antes de cualquier estrategia.
+                </p>
+            </div>
+
+            <div class="proceso-step reveal">
+                <div class="proceso-number">02</div>
+                <h3 data-es="Estrategia" data-de="Strategie">Estrategia</h3>
+                <p data-es="Diseño el posicionamiento basándome en neuromarketing y comportamiento del consumidor." data-de="Ich entwerfe die Positionierung basierend auf Neuromarketing und Käuferpsychologie.">
+                    Diseño el posicionamiento basándome en neuromarketing y comportamiento del consumidor.
+                </p>
+            </div>
+
+            <div class="proceso-step reveal">
+                <div class="proceso-number">03</div>
+                <h3 data-es="Creación" data-de="Gestaltung">Creación</h3>
+                <p data-es="Construimos identidad, mensajes y materiales con precisión estética y estratégica." data-de="Wir bauen Identität, Botschaften und Materialien mit ästhetischer und strategischer Präzision.">
+                    Construimos identidad, mensajes y materiales con precisión estética y estratégica.
+                </p>
+            </div>
+
+            <div class="proceso-step reveal">
+                <div class="proceso-number">04</div>
+                <h3 data-es="Lanzamiento" data-de="Launch">Lanzamiento</h3>
+                <p data-es="Ejecutamos el go-to-market y medimos el impacto para crecer con intención." data-de="Wir führen den Go-to-Market aus und messen die Wirkung, um mit Intention zu wachsen.">
+                    Ejecutamos el go-to-market y medimos el impacto para crecer con intención.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía Quote -->
+    <section class="filosofia-quote reveal">
+        <blockquote data-es="Las personas no conectan con productos. Conectan con historias, necesidades, valores y emociones que les resultan significativas." data-de="Menschen verbinden sich nicht mit Produkten. Sie verbinden sich mit Geschichten, Bedürfnissen, Werten und Emotionen, die für sie von Bedeutung sind.">
+            Las personas no conectan con productos. Conectan con historias, necesidades, valores y emociones que les resultan <em>significativas</em>.
+        </blockquote>
+        <p class="quote-author" data-es="Maria Sandoval · Filosofía de trabajo" data-de="Maria Sandoval · Arbeitsphilosophie">Maria Sandoval · Filosofía de trabajo</p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="section-header">
+            <h2 data-es="¿Listo/a para construir tu marca?" data-de="Bereit, deine Marke aufzubauen?">¿Listo/a para<br>construir tu<br><em>marca?</em></h2>
+            <p class="section-subtitle" data-es="Cuéntame tu proyecto. Si hay conexión real entre tu visión y mi forma de trabajar, construimos algo hermoso, sólido y lleno de vida." data-de="Erzähl mir von deinem Projekt. Wenn es eine echte Verbindung zwischen deiner Vision und meiner Arbeitsweise gibt, bauen wir gemeinsam etwas Schönes und Solides auf.">
+                Cuéntame tu proyecto. Si hay conexión real entre tu visión y mi forma de trabajar, construimos algo hermoso, sólido y lleno de vida.
+            </p>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item reveal">
+                <div class="contact-label">✉</div>
+                <div class="contact-value"><a href="mailto:hola@mariasandoval.com">hola@mariasandoval.com</a></div>
+            </div>
+            <div class="contact-item reveal">
+                <div class="contact-label">📍</div>
+                <div class="contact-value">Freiburg, Deutschland</div>
+            </div>
+            <div class="contact-item reveal">
+                <div class="contact-label">🌿</div>
+                <div class="contact-value" data-es="Disponible para nuevos proyectos" data-de="Verfügbar für neue Projekte">Disponible para nuevos proyectos</div>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label data-es="Tu nombre" data-de="Dein Name">Tu nombre</label>
+                <input type="text" name="name" placeholder="¿Cómo te llamas?" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label data-es="¿En qué etapa está tu proyecto?" data-de="In welcher Phase befindet sich dein Projekt?">¿En qué etapa está tu proyecto?</label>
+                <select name="stage" required>
+                    <option value="" data-es="Selecciona una opción" data-de="Wähle eine Option">Selecciona una opción</option>
+                    <option value="idea" data-es="Solo tengo una idea" data-de="Ich habe nur eine Idee">Solo tengo una idea</option>
+                    <option value="startup" data-es="Estoy iniciando" data-de="Ich fange an">Estoy iniciando</option>
+                    <option value="growth" data-es="Ya estoy creciendo" data-de="Ich wachse schon">Ya estoy creciendo</option>
+                    <option value="rebranding" data-es="Necesito cambiar imagen" data-de="Ich brauche ein Rebranding">Necesito cambiar imagen</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label data-es="Cuéntame más" data-de="Erzähl mir mehr">Cuéntame más</label>
+                <textarea name="message" rows="5" placeholder="Tu proyecto, ideas, preguntas..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" data-es="Enviar mensaje" data-de="Nachricht senden">Enviar mensaje ↗</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-tagline">Estrategia que respira. Marcas que perduran.</p>
+            <div class="footer-nav">
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="#servicios" data-es="Servicios" data-de="Leistungen">Servicios</a>
+                <a href="#contacto" data-es="Contacto" data-de="Kontakt">Contacto</a>
+            </div>
+            <p class="footer-copyright">© 2026 Maria Sandoval · <span data-es="Todos los derechos reservados" data-de="Alle Rechte vorbehalten">Todos los derechos reservados</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switching
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = localStorage.getItem('lang') || 'es';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) btn.classList.add('active');
+            });
+
+            document.querySelectorAll('[data-es][data-de]').forEach(el => {
+                el.textContent = el.dataset[lang] || el.textContent;
+            });
+
+            document.querySelectorAll('[data-es][data-de]:not(input):not(textarea)').forEach(el => {
+                if (el.dataset[lang]) {
+                    el.innerHTML = el.innerHTML.replace(
+                        el.textContent,
+                        el.dataset[lang]
+                    );
+                }
+            });
+        }
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        setLanguage(currentLang);
+
+        // Morphing Shape Animation
+        const morphPath = document.querySelector('.morph-path');
+        const shapes = [
+            'M150,60 C200,60 240,100 240,150 C240,200 200,240 150,240 C100,240 60,200 60,150 C60,100 100,60 150,60 Z',
+            'M150,70 C210,80 235,110 235,150 C235,205 195,245 150,245 C95,240 60,205 60,150 C65,95 105,65 150,70 Z',
+            'M140,55 C200,50 245,95 245,150 C245,210 200,250 140,250 C80,245 55,210 60,150 C55,90 85,55 140,55 Z',
+            'M155,65 C215,65 240,110 235,155 C240,205 200,245 155,245 C100,240 65,205 70,150 C65,100 100,65 155,65 Z'
+        ];
+
+        let shapeIndex = 0;
+
+        function animateMorphing() {
+            shapeIndex = (shapeIndex + 1) % shapes.length;
+            morphPath.setAttribute('d', shapes[shapeIndex]);
+        }
+
+        setInterval(animateMorphing, 2000);
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate form
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                stage: formData.get('stage'),
+                message: formData.get('message')
+            };
+
+            // Send to Formspree (update with your form endpoint)
+            try {
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Mensaje enviado con éxito. Gracias por contactarme!');
+                    e.target.reset();
+                } else {
+                    alert('Error al enviar. Intenta de nuevo.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error de conexión. Intenta de nuevo más tarde.');
+            }
+        });
+
+        // Manejar carga de imágenes
+        const heroImage = document.getElementById('heroImage');
+        const placeholder = document.getElementById('heroImagePlaceholder');
+        const profileImage = document.getElementById('hero-profile-img');
+
+        if (heroImage && placeholder) {
+            heroImage.addEventListener('load', function() {
+                placeholder.classList.add('hidden');
+            });
+            
+            // Si la imagen ya está en caché, también ocultamos el placeholder
+            if (heroImage.complete) {
+                placeholder.classList.add('hidden');
+            }
+        }
+
+        if (profileImage) {
+            profileImage.addEventListener('load', function() {
+                document.getElementById('profile-placeholder').style.display = 'none';
+            });
+            if (profileImage.complete) {
+                document.getElementById('profile-placeholder').style.display = 'none';
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
