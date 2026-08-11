@@ -942,16 +942,7 @@
       gap: 80px; align-items: start;
       background: var(--white); position: relative; overflow: hidden;
     }
-    /* Big triangle bg */
-    .contact::before {
-      content: ''; position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 0;
-      border-bottom: 300px solid var(--purple-pale);
-      border-right: 300px solid transparent;
-      pointer-events: none; opacity: 0.5;
-    }
-
+ 
     .contact-title {
       font-family: 'DM Sans', sans-serif; font-weight: 500;
       font-size: clamp(2.5rem, 4.5vw, 4.2rem);
@@ -1181,7 +1172,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">M <span>S</span></a>
+    <a href="#" class="nav-logo">M<span>S</span></a>
     <div style="display:flex;align-items:center;gap:32px;">
       <ul class="nav-links">
         <li><a href="#servicios" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'});return false;"><span class="es">Servicios</span><span class="de">Leistungen</span></a></li>
